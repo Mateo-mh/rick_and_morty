@@ -1,0 +1,32 @@
+.containerSearch{
+    float: right;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.input {
+    color: #fff;
+    border: 1px solid #5e4dcd;
+    border-radius: 6px 0 0 6px;
+    background-color: transparent;
+}
+
+.buttonSubmit {
+    margin-top: 6px;
+    margin-right: 4px;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    background-color: #5e4dcd;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+}
+
+.buttonSubmit:hover {
+    background-color: #5e5dcd;
+}
+
+.input:focus, .input:focus-visible {
+    border-color: #3898EC;
+    outline: none;
+}

@@ -1,0 +1,96 @@
+:root {
+    --blue-rgb: 33 150 243;
+    --primary-rgb: var(--blue-rgb);
+    --border-color: #26a;
+    --line-color: #0cf;
+    --content-background: #111620;
+    --animation-speed: 1s;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: left;
+    text-align: center;
+    padding: 0.5rem;
+    margin: 10px;
+    width: 9%;
+    height: 245px;
+    color: white;
+    border: 3px solid rgb(var(--primary-rgb) / 50%);
+    box-shadow: 0 0 15px var(--border-color);
+}
+
+
+.img {
+    width: 83%;
+    margin-bottom: 2px;
+}
+
+.textCard {
+    font-size: 10px;
+    text-align: center;
+    margin: 2px;
+    padding: 1px;
+    color: var(--line-color);
+    text-shadow: 0 0 0.1em var(--line-color);
+    animation:
+    neonAnimation var(--animation-speed) infinite linear;
+}
+
+.textCard:hover {
+    color: #fff;
+}
+
+#boton {
+    cursor: pointer;
+    background-color: #050510;
+    border: 1px solid #008CBA;
+    color: #008CBA;
+    justify-content: center;
+    text-align: center;
+    width: 70px;
+    font-size: 12px;
+    margin-bottom: 8px;
+    border-radius: 100px;
+}
+
+#boton:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+#linkName{
+    text-decoration: none;
+}
+
+@keyframes borderAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes neonAnimation {
+    from {
+        text-shadow: 0 0 5px var(--line-color);
+    }
+
+    50% {
+        text-shadow: 0 0 10px var(--line-color);
+    }
+
+    to {
+        text-shadow: 0 0 5px var(--line-color);
+    }
+}
+
+body {
+    background: #050510;
+}
+
+

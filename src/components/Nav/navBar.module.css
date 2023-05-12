@@ -1,0 +1,17 @@
+.nav{
+    background-color: aqua;
+    overflow: hidden;
+}
+
+.linkNav{
+    text-decoration: none;
+    margin-top: 3px;
+    margin-right:  1rem;
+    margin-left:  1rem;
+    float: left;
+}
+
+.linkNav:hover{
+    cursor: pointer;
+    color: #fff;
+}
