@@ -8,6 +8,7 @@ import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import About from './components/Routing/About.jsx'
 import Detail from './components/Routing/Detail.jsx'
 import Form from './components/Form/Form.jsx'
+import Favorites from './components/Favorites/Favorites.jsx'
 const EMAIL = 'byronmh8@gmail.com';
 const PASSWORD = 'byronmh1';
 
@@ -28,10 +29,9 @@ function App() {
       }
    };
 
-// eslint-disable-next-line react-hooks/exhaustive-deps
    useEffect(() => {
       !access && navigate("/");
-   }, [access]);
+   }, [access,navigate]); 
 
       const onSearch = (id) => {
          axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
@@ -56,6 +56,7 @@ function App() {
                <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
                <Route path="/about" element={<About />} />
                <Route path="/detail/:id" element={<Detail />} />
+               <Route path="/favorites" element={<Favorites/>}/>
             </Routes>
          </div>
 

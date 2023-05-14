@@ -9,6 +9,8 @@ return (
             <NavLink className={style.linkNav} to= '/'>Log Out</NavLink>
             <NavLink className={style.linkNav} to='/home'>Home</NavLink>
             <NavLink className={style.linkNav} to='/about'>About</NavLink>
+            <NavLink className={style.linkNav} to='/favorites'>Favorites</NavLink>
+
     </div>
     );
 };

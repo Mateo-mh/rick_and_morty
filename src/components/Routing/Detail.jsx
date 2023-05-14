@@ -24,10 +24,10 @@ const Detail = () => {
         <div>
             <img src={character.image && character.image} alt="img" />
             <h1>{character.name && character.name}</h1>
-            <p>{character.status && character.status}</p>
-            <p>{character.species && character.species}</p>
-            <p>{character.gender && character.gender}</p>
-            <p>{character.origin?.name && character.origin?.name}</p>
+            <p>Status: {character.status && character.status}</p>
+            <p>Specie: {character.species && character.species}</p>
+            <p>Gender: {character.gender && character.gender}</p>
+            <p>Origin: {character.origin?.name && character.origin?.name}</p>
             
             <Link to='/home'>
                 <button>Home</button>
