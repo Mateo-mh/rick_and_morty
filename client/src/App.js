@@ -9,8 +9,8 @@ import About from './components/Routing/About.jsx'
 import Detail from './components/Routing/Detail.jsx'
 import Form from './components/Form/Form.jsx'
 import Favorites from './components/Favorites/Favorites.jsx'
-const EMAIL = 'byronmh8@gmail.com';
-const PASSWORD = 'byronmh1';
+const EMAIL = '';
+const PASSWORD = '';
 
 function App() {
    const [characters, setCharacters] = useState([]);

@@ -7,9 +7,13 @@
     --animation-speed: 1s;
 }
 
+
+
+
 .container {
     display: flex;
     flex-direction: column;
+    background-color: #050510;
     align-items: center;
     float: left;
     text-align: center;
@@ -88,9 +92,4 @@
         text-shadow: 0 0 5px var(--line-color);
     }
 }
-
-body {
-    background: #050510;
-}
-
 

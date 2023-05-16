@@ -41,7 +41,7 @@ const Form = ({ login }) => {
                     onChange={handleChange}
                     autocomplete="off"
                 />
-            <p className={style.p}>{errors.email}</p>
+                {errors.email && <p className={style.p}>{errors.email}</p>}
         </div>
 
             
@@ -53,7 +53,7 @@ const Form = ({ login }) => {
                     value={userData.password}
                     onChange={handleChange}
                 />
-                <p className={style.p}>{errors.password}</p>
+                {errors.password && <p className={style.p}>{errors.password}</p>}
             </div>
 
             <div className={style.btn}><button id={style.boton} type="submit">LOGIN</button></div>
