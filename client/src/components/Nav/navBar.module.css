@@ -9,9 +9,10 @@
     margin-right:  1rem;
     margin-left:  1rem;
     float: left;
+    color: #5e5dcd;
 }
 
 .linkNav:hover{
     cursor: pointer;
-    color: #fff;
+    color: #008CBA;
 }

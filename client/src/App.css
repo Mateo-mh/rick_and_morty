@@ -1,7 +1,12 @@
+:root{
+   --content-background: #111620;
+}
 .App {
    text-align: center;
 }
 
 html{
-   background-color: var(--content-background) !important;
+   /* background-color: var(--content-background) !important; */
+   background-image: url('./media/fondo_espacial.jpg') !important;
+   background-size: cover;
 }
