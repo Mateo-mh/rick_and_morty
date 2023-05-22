@@ -1,13 +1,28 @@
 const express = require('express');
 const server = express();
-const PORT = 3001;
+const PORT = 3001
+const morgan = require('morgan');
+const router = require('./routes/index')
 
-server.listen(PORT, () => {
-    console.log('Server raised in port: ' + PORT);
+
+server.use(express.json());
+server.use(morgan('dev'));
+
+
+
+server.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept'
+    );
+    res.header(
+        'Access-Control-Allow-Methods',
+        'GET, POST, OPTIONS, PUT, DELETE'
+    );
+    next();
 });
 
-    // if(request.url.includes('/rickandmorty/character')){
-    //     const id = request.url.split('/').at(-1);
-    //     const characterFound = characters.find((character) => character.id === +id);
-    //     return response.writeHead(200,{'content-type': 'application/json'}).end(JSON.stringify(characterFound));
-    // }
+server.use('/rickandmorty', router);
+server.listen(PORT, () => console.log(`Listening on port: ${PORT}`))

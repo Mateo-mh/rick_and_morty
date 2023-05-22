@@ -42,8 +42,11 @@ const Form = ({ login }) => {
                     autocomplete="off"
                     placeholder = 'Email'
                 />
-                {errors.email && <p className={style.p}>{errors.email}</p>}
-        </div>
+                {errors.e1 ? (<p>{errors.e1}</p>)
+                : errors.e2 ? (<p>{errors.e2}</p>) 
+                : (<p>{errors.e3}</p>)
+                }
+            </div>
 
             
             <div className={style.field}>
@@ -55,7 +58,9 @@ const Form = ({ login }) => {
                     onChange={handleChange}
                     placeholder = 'Password'
                 />
-                {errors.password && <p className={style.p}>{errors.password}</p>}
+                {
+                    errors.p1 ? <p>{errors.p1}</p> : (<p>{errors.p2}</p>)
+                }
             </div>
 
             <div className={style.btn}><button id={style.boton} type="submit">LOGIN</button></div>

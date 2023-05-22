@@ -14,8 +14,8 @@ const SearchBar = ({ onSearch }) => {
             className={style.input}
             id={style.Email}
             autocomplete="off"
-            name="Email"
             onChange={handleChange}
+            value={id}
          />
          <button className={style.buttonSubmit} onClick={() => onSearch(id)}  >
          Agregar

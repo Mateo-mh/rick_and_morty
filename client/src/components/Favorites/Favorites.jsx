@@ -1,6 +1,6 @@
 import Card from "../Card/Card.jsx";
 import { connect, useDispatch } from "react-redux";
-import {filterCards, orderCards}   from "../../redux/actions.js";
+import {filterCards, orderCards, removeFav}   from "../../redux/actions.js";
 import { useState } from "react";
 
 const Favorites = ({ myFavorites }) => {
@@ -9,12 +9,16 @@ const Favorites = ({ myFavorites }) => {
 
     const handleOrder = (event) => {
         dispatch(orderCards(event.target.value))
-        setAux(true);
+        setAux(!aux);
     }
     
     const handleFilter = (event) => {
         dispatch(filterCards(event.target.value))
     }
+
+    const handleClose = (id) => {
+        dispatch(removeFav(id));
+    };
 
 return (
     <div>
@@ -28,11 +32,10 @@ return (
         <option value="Female">Female</option>
         <option value="Genderless">Genderless</option>
         <option value="unknown">unknown</option>
-        <option value="allCharacters">All Characters</option>
     </select>
 
     {myFavorites?.map(
-        ({ id, name, status, species, gender, origin, image, onClose }) => {
+        ({ id, name, status, species, gender, origin, image }) => {
         return (
             <Card
             key={id}
@@ -43,7 +46,7 @@ return (
             gender={gender}
             origin={origin}
             image={image}
-            onClose={onClose}
+            onClose={handleClose}
             />
             );
         })

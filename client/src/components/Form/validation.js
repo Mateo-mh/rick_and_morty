@@ -1,26 +1,21 @@
 const validate = (userData) => {
     let errors = {};
 
-    if(!/\S+@\S+\.\S+/.test(userData.email)){
-        errors.email = 'El email es invalido'
+    if(!userData.email.includes('@')){
+        errors.e1 = 'Email is not valid';
     }
-
     if(!userData.email){
-        errors.email = 'Este campo no puede estar vació'
+        errors.e2 = 'Ingrese Email'
     }
-
     if(userData.email.length > 35){
-        errors.email = 'Este campo no puede tener mas de 35 caracteres'
+        errors.e3 = 'Menos de 35 caracteres'
     }
-
-    if(!userData.password.match(/\d/)){
-        errors.password = 'La contraseña tiene que tener al menos un número'
+    if(!/\d/.test(userData.password)){
+        errors.p1 = 'Al menos debe tener un numero'
     }
-
-    if(userData.password.length < 6 || userData.password.length > 10 ){
-        errors.password = 'La contraseña tiene que tener una longitud entre 6 y 10 caracteres'
+    if(userData.password.length < 6 || userData.password.length > 10){
+        errors.p2 = 'Longitud incorrecta'
     }
-
-    return errors;
+    return errors
 };
 export default validate
