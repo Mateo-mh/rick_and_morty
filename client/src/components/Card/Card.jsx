@@ -19,11 +19,17 @@ const Card = ({id, name, status, species, gender, origin, image, onClose, addFav
      });
   }, [myFavorites,id]);
 
+  
 return (
    <div className={style.container}>
-      {
-         <button onClick={handleFavorite}>{isFav ? "❤️" : "🤍"}</button>
-      }
+    <div className={style.buttonContainer}>
+      <button
+        className={isFav ? `${style.beatingHeart} ${style.litUp}` : style.beatingHeart}
+        onClick={handleFavorite}
+      >
+        {isFav ? "❤️" : "🤍"}
+         </button> 
+      </div>
       <button id={style.boton} onClick={() => onClose(id)}>Cerrar </button>
       <NavLink id={style.linkName} to={`/detail/${id}`}>
          <img className={style.img} src={image} alt="" />
